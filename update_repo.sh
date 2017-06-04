@@ -2,9 +2,6 @@
 
 # Populates glide maven repository with current snapshot from google3
 
-GLIDE_VERSION='4.0.0-SNAPSHOT'
-DISKLRUCACHE_VERSION='1.0.0-SNAPSHOT'
-GIFDECODER_VERSION='1.0.0-SNAPSHOT'
 
 TARGET_DIR=`pwd`
 
@@ -22,17 +19,17 @@ blaze build \
    third_party/java_src/android_libs/glide/third_party/gif_decoder:libgif_decoder-src.jar
 
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide.jar \
-   $TARGET_DIR/com/github/bumptech/glide/glide/$GLIDE_VERSION/glide-$GLIDE_VERSION.jar
+   $TARGET_DIR/com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide-src.jar \
-   $TARGET_DIR/com/github/bumptech/glide/glide/$GLIDE_VERSION/glide-$GLIDE_VERSION-sources.jar
+   $TARGET_DIR/com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT-sources.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/third_party/disklrucache/libdisklrucache.jar \
-   $TARGET_DIR/com/github/bumptech/glide/disklrucache/$DISKLRUCACHE_VERSION/disklrucache-$DISKLRUCACHE_VERSION.jar
+   $TARGET_DIR/com/github/bumptech/glide/disklrucache/SNAPSHOT/disklrucache-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/third_party/disklrucache/libdisklrucache-src.jar \
-   $TARGET_DIR/com/github/bumptech/glide/disklrucache/$DISKLRUCACHE_VERSION/disklrucache-$DISKLRUCACHE_VERSION-sources.jar
+   $TARGET_DIR/com/github/bumptech/glide/disklrucache/SNAPSHOT/disklrucache-SNAPSHOT-sources.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/third_party/gif_decoder/libgif_decoder.jar \
-   $TARGET_DIR/com/github/bumptech/glide/gifdecoder/$GIFDECODER_VERSION/gifdecoder-$GIFDECODER_VERSION.jar
+   $TARGET_DIR/com/github/bumptech/glide/gifdecoder/SNAPSHOT/gifdecoder-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/third_party/gif_decoder/libgif_decoder-src.jar \
-   $TARGET_DIR/com/github/bumptech/glide/gifdecoder/$GIFDECODER_VERSION/gifdecoder-$GIFDECODER_VERSION-sources.jar
+   $TARGET_DIR/com/github/bumptech/glide/gifdecoder/SNAPSHOT/gifdecoder-SNAPSHOT-sources.jar
 
 echo "This maven repository was synced to google3 CL $SYNCED_CL" > $TARGET_DIR/README.txt
 popd
