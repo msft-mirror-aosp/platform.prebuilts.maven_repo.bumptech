@@ -11,6 +11,10 @@ pushd /google/src/cloud/$USER/sync_glide_google3_android/google3 >> /dev/null
 SYNCED_CL=`g4 sync | grep @ | sed s/.*@//`
 
 blaze build \
+   third_party/java_src/android_libs/glide/annotation:libannotation.jar \
+   third_party/java_src/android_libs/glide/annotation:libannotation-src.jar \
+   third_party/java_src/android_libs/glide/annotation/compiler:libcompiler_lib.jar \
+   third_party/java_src/android_libs/glide/annotation/compiler:libcompiler_lib-src.jar \
    third_party/java_src/android_libs/glide/library/src/main:libglide.jar \
    third_party/java_src/android_libs/glide/library/src/main:libglide-src.jar \
    third_party/java_src/android_libs/glide/third_party/disklrucache:libdisklrucache.jar \
@@ -18,6 +22,14 @@ blaze build \
    third_party/java_src/android_libs/glide/third_party/gif_decoder:libgif_decoder.jar \
    third_party/java_src/android_libs/glide/third_party/gif_decoder:libgif_decoder-src.jar
 
+cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/libannotation.jar \
+   $TARGET_DIR/com/github/bumptech/glide/annotation/SNAPSHOT/annotation-SNAPSHOT.jar
+cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/libannotation-src.jar \
+   $TARGET_DIR/com/github/bumptech/glide/annotation/SNAPSHOT/annotation-SNAPSHOT-sources.jar
+cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/compiler/libcompiler_lib.jar \
+   $TARGET_DIR/com/github/bumptech/glide/compiler/SNAPSHOT/compiler-SNAPSHOT.jar
+cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/compiler/libcompiler_lib-src.jar \
+   $TARGET_DIR/com/github/bumptech/glide/compiler/SNAPSHOT/compiler-SNAPSHOT-sources.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide.jar \
    $TARGET_DIR/com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide-src.jar \
