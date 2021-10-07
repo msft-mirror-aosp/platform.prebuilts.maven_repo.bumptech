@@ -37,5 +37,11 @@ java_import {
         "com/github/bumptech/glide/gifdecoder/4.8.0/gifdecoder-4.8.0.jar",
     ],
     jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
     notice: "LICENSE",
 }
