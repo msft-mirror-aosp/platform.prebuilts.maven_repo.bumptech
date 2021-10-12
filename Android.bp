@@ -29,12 +29,10 @@ license {
     ],
 }
 
-java_import {
+android_library_import {
     name: "glide-prebuilt",
-    jars: [
-        "com/github/bumptech/glide/glide/4.8.0/glide-4.8.0.jar",
-        "com/github/bumptech/glide/disklrucache/4.8.0/disklrucache-4.8.0.jar",
-        "com/github/bumptech/glide/gifdecoder/4.8.0/gifdecoder-4.8.0.jar",
+    aars: [
+        "com/github/bumptech/glide/glide/4.12.0/glide-4.12.0.aar",
     ],
     jetifier: true,
     apex_available: [
@@ -44,4 +42,66 @@ java_import {
     sdk_version: "current",
     min_sdk_version: "14",
     notice: "LICENSE",
+}
+
+android_library_import {
+    name: "glide-disklrucache-prebuilt",
+    aars: [
+        "com/github/bumptech/glide/disklrucache/4.12.0/disklrucache-4.12.0.aar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
+    notice: "LICENSE",
+}
+
+android_library_import {
+    name: "glide-gifdecoder-prebuilt",
+    aars: [
+        "com/github/bumptech/glide/gifdecoder/4.12.0/gifdecoder-4.12.0.aar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
+    notice: "LICENSE",
+}
+
+java_import {
+    name: "glide-annotation-and-compiler-prebuilt",
+    jars: [
+        "com/github/bumptech/glide/compiler/4.12.0/compiler-4.12.0.jar",
+        "com/github/bumptech/glide/annotation/4.12.0/annotations-4.12.0.jar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
+    notice: "LICENSE",
+}
+
+java_import_host {
+    name: "glide-annotation-and-compiler-prebuilt-host",
+    jars: [
+        "com/github/bumptech/glide/compiler/4.12.0/compiler-4.12.0.jar",
+        "com/github/bumptech/glide/annotation/4.12.0/annotations-4.12.0.jar",
+    ],
+    notice: "LICENSE",
+}
+
+java_plugin {
+    name: "glide-annotation-processor",
+    static_libs: ["glide-annotation-and-compiler-prebuilt-host"],
+    processor_class: "com.bumptech.glide.annotation.compiler.GlideAnnotationProcessor",
+    use_tools_jar: true,
 }
