@@ -37,5 +37,4 @@ java_import {
         "com/github/bumptech/glide/gifdecoder/4.8.0/gifdecoder-4.8.0.jar",
     ],
     jetifier: true,
-    notice: "LICENSE",
 }
