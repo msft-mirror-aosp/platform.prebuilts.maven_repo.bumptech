@@ -5,6 +5,7 @@ package {
 // See: http://go/android-license-faq
 license {
     name: "prebuilts_maven_repo_bumptech_license",
+    package_name: "glide",
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
