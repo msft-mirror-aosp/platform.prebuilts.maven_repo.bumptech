@@ -15,6 +15,8 @@ blaze build \
    third_party/java_src/android_libs/glide/annotation:libannotation-src.jar \
    third_party/java_src/android_libs/glide/annotation/compiler:libcompiler_lib.jar \
    third_party/java_src/android_libs/glide/annotation/compiler:libcompiler_lib-src.jar \
+   third_party/java_src/android_libs/glide/integration/recyclerview:librecyclerview.jar \
+   third_party/java_src/android_libs/glide/integration/recyclerview:librecyclerview-src.jar \
    third_party/java_src/android_libs/glide/library/src/main:libglide.jar \
    third_party/java_src/android_libs/glide/library/src/main:libglide-src.jar \
    third_party/java_src/android_libs/glide/third_party/disklrucache:libdisklrucache.jar \
@@ -30,6 +32,10 @@ cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/compiler/libc
    $TARGET_DIR/com/github/bumptech/glide/compiler/SNAPSHOT/compiler-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/annotation/compiler/libcompiler_lib-src.jar \
    $TARGET_DIR/com/github/bumptech/glide/compiler/SNAPSHOT/compiler-SNAPSHOT-sources.jar
+cp -f blaze-bin/third_party/java_src/android_libs/glide/integration/recyclerview/librecyclerview.jar \
+   $TARGET_DIR/com/github/bumptech/glide/integration/recyclerview/SNAPSHOT/recyclerview-SNAPSHOT.jar
+cp -f blaze-bin/third_party/java_src/android_libs/glide/integration/recyclerview/librecyclerview-src.jar \
+   $TARGET_DIR/com/github/bumptech/glide/integration/recyclerview/SNAPSHOT/recyclerview-SNAPSHOT-sources.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide.jar \
    $TARGET_DIR/com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT.jar
 cp -f blaze-bin/third_party/java_src/android_libs/glide/library/src/main/libglide-src.jar \
