@@ -74,6 +74,20 @@ java_import {
 }
 
 java_import {
+  name: "glide-integration-webpdecoder-prebuilt",
+  jars: [
+    "com/github/bumptech/glide/integration/webpdecoder/webpdecoder-2.6.4.16.0-sources.jar",
+  ],
+  jetifier: true,
+  apex_available: [
+      "com.android.mediaprovider",
+      "//apex_available:platform",
+  ],
+  sdk_version: "current",
+  min_sdk_version: "14",
+}
+
+java_import {
     name: "glide-annotation-and-compiler-prebuilt",
     jars: [
         "com/github/bumptech/glide/compiler/4.16.0/compiler-4.16.0.jar",
