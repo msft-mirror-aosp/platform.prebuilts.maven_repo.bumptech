@@ -60,31 +60,31 @@ android_library_import {
 }
 
 java_import {
-  name: "glide-integration-recyclerview-prebuilt",
-  jars: [
-    "com/github/bumptech/glide/integration/recyclerview/SNAPSHOT/recyclerview-SNAPSHOT.jar",
-  ],
-  jetifier: true,
-  apex_available: [
-      "com.android.mediaprovider",
-      "//apex_available:platform",
-  ],
-  sdk_version: "current",
-  min_sdk_version: "14",
+    name: "glide-integration-recyclerview-prebuilt",
+    jars: [
+        "com/github/bumptech/glide/integration/recyclerview/SNAPSHOT/recyclerview-SNAPSHOT.jar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
 }
 
 java_import {
-  name: "glide-integration-webpdecoder-prebuilt",
-  jars: [
-    "com/github/bumptech/glide/integration/webpdecoder/webpdecoder-2.6.4.16.0-sources.jar",
-  ],
-  jetifier: true,
-  apex_available: [
-      "com.android.mediaprovider",
-      "//apex_available:platform",
-  ],
-  sdk_version: "current",
-  min_sdk_version: "14",
+    name: "glide-integration-webpdecoder-prebuilt",
+    jars: [
+        "com/github/bumptech/glide/integration/webpdecoder/webpdecoder-2.6.4.16.0-sources.jar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
 }
 
 java_import {
@@ -140,4 +140,13 @@ java_import_host {
         "com/github/bumptech/glide/annotation/4.5.0/annotation-4.5.0.jar",
         "com/github/bumptech/glide/compiler/4.5.0/compiler-4.5.0.jar",
     ],
+}
+
+java_plugin {
+    name: "dialer-glide-annotation-processor",
+    visibility: ["//packages/apps/Dialer"],
+    static_libs: ["dialer-glide-host-deps"],
+    processor_class: "com.bumptech.glide.annotation.compiler.GlideAnnotationProcessor",
+    // Allow annotation processor generates classes referenced from outside the module.
+    generates_api: true,
 }
