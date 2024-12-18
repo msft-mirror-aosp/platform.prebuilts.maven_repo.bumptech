@@ -32,9 +32,37 @@ android_library_import {
 }
 
 android_library_import {
+    name: "glide-mocks",
+    aars: [
+        "com/github/bumptech/glide/glide-mocks/4.16.0/mocks-4.16.0.aar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
+}
+
+android_library_import {
     name: "glide-compose-prebuilt",
     aars: [
         "com/github/bumptech/glide/compose/1.0.0-beta-01/compose-1.0.0-beta01.aar",
+    ],
+    jetifier: true,
+    apex_available: [
+        "com.android.mediaprovider",
+        "//apex_available:platform",
+    ],
+    sdk_version: "current",
+    min_sdk_version: "14",
+}
+
+android_library_import {
+    name: "glide-ktx-prebuilt",
+    aars: [
+        "com/github/bumptech/glide/glide-ktx/1.0.0-beta-01/glide-ktx-1.0.0-beta01.aar",
     ],
     jetifier: true,
     apex_available: [
